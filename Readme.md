@@ -13,13 +13,13 @@ UI関連が多いです。
 ---
 ### Unity公式
 ---
-色々書いてありますが、とりあえずUnityプロジェクトのDLL参照と同じものを用意してくれればOKです。  
+色々書いてありますが、とりあえずUnityプロジェクトのDLL参照と同じものを用意してくれればOKです。   
 編集せず利用のみの場合は気にしないでUnityプロジェクトに突っ込んでもらえれば動くと思います。  
 
 ・Unityの新規プロジェクトを作成した際に参照に追加される各種DLL  
-  現状のバージョンは2019.4.1f1のものを使用しています。　　
-・ScriptAssemblies
-  こちらもUnityプロジェクトと同じものを用意し、このプロジェクトのひとつ上のフォルダに置いてください。そうすればパスが通るはずです。
+  現状のバージョンは2019.4.1f1のものを使用しています。  
+・ScriptAssemblies  
+  こちらもUnityプロジェクトと同じものを用意し、このプロジェクトのひとつ上のフォルダに置いてください。そうすればパスが通るはずです。  
 
 ### アセットストアより
 ---
@@ -30,5 +30,5 @@ UI関連が多いです。
 
 ### その他利用させていただいているクラス
 ---
-・SingletonMonoBehaviour(「Plugins_for_Library/DesignPatterns/」に入れてください)
+・SingletonMonoBehaviour(「Plugins_for_Library/DesignPatterns/」に入れてください)  
   https://qiita.com/okuhiiro/items/3d69c602b8538c04a479
