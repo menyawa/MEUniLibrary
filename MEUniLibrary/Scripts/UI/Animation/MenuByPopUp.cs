@@ -9,6 +9,7 @@ namespace MEUniLibrary.UI.Animation {
         [SerializeField] private Sprite[] menuSprites_;
         [SerializeField] private UnityEngine.UI.Image currentMenuImage_;
 
+        //どのスプライトを指しているかのインデックス
         private int index_;
 
         private void Start() {
@@ -27,8 +28,8 @@ namespace MEUniLibrary.UI.Animation {
             var position = callingMenuIsNext ? new Vector2(2000f, 0f) : new Vector2(-2000f, 0f);
             var newMenuImage = Instantiate(currentMenuImage_.gameObject, position, Quaternion.identity, transform).GetComponent<UnityEngine.UI.Image>();
 
-            RectTransform currentMenuRectTransform = currentMenuImage_.transform as RectTransform;
-            RectTransform newMenuRectTransform = newMenuImage.transform as RectTransform;
+            var currentMenuRectTransform = currentMenuImage_.transform as RectTransform;
+            var newMenuRectTransform = newMenuImage.transform as RectTransform;
             newMenuRectTransform.localPosition = position; //もう一回代入しないと変な位置に生成される
 
             //呼ばれた前後のメニューの画像を取得

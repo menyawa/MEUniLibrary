@@ -2,6 +2,9 @@
 using MEUniLibrary.UI.Animation;
 
 namespace MEUniLibrary.UI.Button {
+    /// <summary>
+    /// ポップアップメニューをスライドするためのカーソルボタンのクラス
+    /// </summary>
     public class CursorButton : ButtonBase {
         [SerializeField] private MenuByPopUp menuByPopUp_;
         [SerializeField] private bool callingMenuIsNext_; //次に行くボタンか
