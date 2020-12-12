@@ -114,6 +114,7 @@
     <Compile Include="Scripts\UI\Button\Base\SwitchOpeningAndClosingOfUIButtonBase.cs" />
     <Compile Include="Scripts\UI\Button\FadeBackgroundPanelBySwitchOpeningMenuButton.cs" />
     <Compile Include="Scripts\UI\Button\InputFieldValueFluctuatingButton.cs" />
+    <Compile Include="Scripts\UI\Button\SwitchingMenuByPopUpButton.cs" />
     <Compile Include="Scripts\UI\Button\SetImageButton.cs" />
     <None Include="..\..\Plugins_for_Library\Demigiant\DemiLib\Core\Editor\DemiEditor.xml">
       <Link>Scripts\Plugins\DemiEditor.xml</Link>
