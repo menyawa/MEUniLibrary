@@ -89,7 +89,7 @@ namespace MEUniLibrary.UI.Button {
                     path += Application.streamingAssetsPath;
                     break;
             }
-            path += $"{directoryName_}/";
+            path += $"/{directoryName_}/";
             //フォルダがなかったら生成しておく
             if (Directory.Exists(path) == false) Directory.CreateDirectory(path);
             path += $"{fileName_}.es3";
