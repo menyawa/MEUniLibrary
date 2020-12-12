@@ -24,7 +24,10 @@ namespace MEUniLibrary.UI.Animation {
             //フィールドの現在のImageの参照を入れ替える方法では、使い回すと他のメニューを入れ替えた際、他のメニューの参照まで消えてしまう
             //そして次に開いた際に参照が消えているため、弄くろうとしてnull参照となるため、動的取得が有利
             //また、行数も削減できる(フィールドの参照を入れ替える作業が不要になる)
-            var currentMenuImage = transform.GetComponentInChildren<UnityEngine.UI.Image>();
+            //一番手前のImageが一番最新なので、それを取得する
+            //さもないと複数のメニューが画面内に残留してしまう
+            var currentMenuObject = transform.GetChild(transform.childCount - 1);
+            var currentMenuImage = currentMenuObject.GetComponent<UnityEngine.UI.Image>();
             //右か左、どちらかカーソルが押された方の画面外に新メニューを生成
             //メニューの親オブジェクト(このオブジェクト)があるので、その子になるよう調整(背景パネルの上かつ、カーソルの下でないといけない)
             //メニューはメニューで一つ親オブジェクトを作ってそれだけでまとめておくことで、カーソル等のUIの順序を乱さない
@@ -51,7 +54,6 @@ namespace MEUniLibrary.UI.Animation {
             //画面外にスライド後、古いメニューは破棄
             endPosX += callingMenuIsNext ? -2000f : 2000f;
             sequence_.Join(currentMenuRectTransform.DOLocalMoveX(endPosX, duration_).SetEase(Ease.InOutBack));
-            var currentMenuObject = currentMenuImage.gameObject;
             sequence_.OnComplete(() => Destroy(currentMenuObject));
             play();
         }
