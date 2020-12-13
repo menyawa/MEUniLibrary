@@ -60,8 +60,10 @@ namespace MEUniLibrary.UI.Animation {
             sequence_.AppendInterval(firstDelay_);
 
             //現在出ているかどうかのフラグを見て、隠す・出すどちらかのポジションを終点とする
-            //反転する場合、背景パネルが最後にならないと不自然なため、順番を逆順で引っ込める
-            if (isDisplayed) selectIndexList.Reverse();
+            //移動向きを反転する場合、背景パネルが最後にならないと不自然なため、順番も逆順で引っ込める
+            var orderType = isDisplayed ? ORDER_TYPE.REVERSE_ORDER : ORDER_TYPE.IN_ORDER;
+            setOrderType(orderType);
+            if(orderType == ORDER_TYPE.REVERSE_ORDER) selectIndexList.Reverse();
             var endPosList = isDisplayed ? firstPositionList_ : secondPositionList_;
 
             //終点に向けて、選んだUIをスライドする
