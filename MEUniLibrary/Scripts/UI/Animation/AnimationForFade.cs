@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using System;
 using UnityEngine;
 
 namespace MEUniLibrary.UI.Animation {
@@ -53,8 +54,11 @@ namespace MEUniLibrary.UI.Animation {
             //開始の遅延も可能
             sequence_.AppendInterval(firstDelay_);
 
-            //UIを頭から順番か、同時に表示していく
-            foreach (var graphic in graphics_) {
+            //UIを順番か、同時に表示していく
+            var graphics = graphics_;
+            //逆順でアニメーションする場合は逆にする
+            if (orderType_ == ORDER_TYPE.REVERSE_ORDER) Array.Reverse(graphics);
+            foreach (var graphic in graphics) {
                 switch (type_) {
                     case TYPE.IN_ORDER:
                         sequence_.Append(graphic.DOFade(endValue_, duration_));
