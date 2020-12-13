@@ -6,7 +6,7 @@ namespace MEUniLibrary.UI.Animation {
     /// UIを１つずつ順番に、あるいは全て同時にフェードイン・アウトするクラス
     /// CanvasGroupを使った方法では全てを同時にフェードするしかなくなってしまい、また全ての対象UIが同じオブジェクトを親としている保証もないので、Graphicの配列を参照していく方法で行う
     /// </summary>
-    public class FadeGraphics : PluralObjectAnimationBase {
+    public class AnimationForFade : PluralObjectAnimationBase {
         [SerializeField] private UnityEngine.UI.Graphic[] graphics_;
         //透明度の終了値
         [SerializeField] private float endValue_;

@@ -105,7 +105,7 @@
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />
     <Compile Include="Scripts\UI\Animation\BackgroundPanelByMenu.cs" />
     <Compile Include="Scripts\UI\Animation\SwitchScaleByObjectWithMousePointer.cs" />
-    <Compile Include="Scripts\UI\Animation\FadeGraphics.cs" />
+    <Compile Include="Scripts\UI\Animation\AnimationForFade.cs" />
     <Compile Include="Scripts\UI\Animation\PointerSelect.cs" />
     <Compile Include="Scripts\UI\Animation\MenuByPopUp.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForSlideByPointToPoint.cs" />
