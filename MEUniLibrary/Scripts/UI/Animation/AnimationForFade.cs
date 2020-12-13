@@ -14,6 +14,8 @@ namespace MEUniLibrary.UI.Animation {
         [SerializeField] private float firstDelay_;
         //開始と同時にアニメーションが必要かどうか
         [SerializeField] private bool needFadeInStart_;
+        //アニメーション前後でアクティブ・非アクティブを切換える必要があるか
+        [SerializeField] private bool needSwitchingActive_;
 
         private void Start() {
             if (needFadeInStart_) fade();
@@ -38,6 +40,17 @@ namespace MEUniLibrary.UI.Animation {
         /// </summary>
         /// <param name="endValue"></param>
         public void fade(float endValue) {
+            //最初の要素をとりあえずサンプルとして今の状態を取る
+            var active = graphics_[0].IsActive();
+            //必要があるなら、アニメーションをする前にアクティブにする
+            if (needSwitchingActive_) {
+                if (active == false) {
+                    foreach (var graphic in graphics_) {
+                        graphic.gameObject.SetActive(true);
+                    }
+                }
+            }
+
             initSequence();
             //開始の遅延も可能
             sequence_.AppendInterval(firstDelay_);
@@ -53,6 +66,17 @@ namespace MEUniLibrary.UI.Animation {
                         break;
                 }
             }
+            //アニメーションが終わったあと、必要があるなら非アクティブにする
+            sequence_.OnComplete(() => {
+                if (needSwitchingActive_) {
+                    if (active) {
+                        foreach (var graphic in graphics_) {
+                            graphic.gameObject.SetActive(false);
+                        }
+                    }
+                }
+            });
+
             play();
         }
 
