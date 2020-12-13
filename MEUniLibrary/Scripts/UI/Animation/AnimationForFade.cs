@@ -26,7 +26,18 @@ namespace MEUniLibrary.UI.Animation {
             }
         }
 
+        /// <summary>
+        /// UIをフェードイン・アウトする(事前設定された値に)
+        /// </summary>
         public void fade() {
+            fade(endValue_);
+        }
+
+        /// <summary>
+        /// UIをフェードイン・アウトする(引数で指定された値に)
+        /// </summary>
+        /// <param name="endValue"></param>
+        public void fade(float endValue) {
             initSequence();
             //開始の遅延も可能
             sequence_.AppendInterval(firstDelay_);

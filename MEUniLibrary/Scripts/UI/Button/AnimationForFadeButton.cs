@@ -20,7 +20,7 @@ namespace MEUniLibrary.UI.Button {
                     animationForFade_.fade();
                     break;
                 case TYPE.CLOSE:
-                    animationForFade_.fade();
+                    animationForFade_.fade(0.0f);
                     break;
             }
         }
