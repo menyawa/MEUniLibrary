@@ -26,13 +26,13 @@ namespace MEUniLibrary.UI.Animation {
             //また、行数も削減できる(フィールドの参照を入れ替える作業が不要になる)
             //一番手前のImageが一番最新なので、それを取得する
             //さもないと複数のメニューが画面内に残留してしまう
-            var currentMenuObject = transform.GetChild(transform.childCount - 1);
+            var currentMenuObject = transform.GetChild(transform.childCount - 1).gameObject;
             var currentMenuImage = currentMenuObject.GetComponent<UnityEngine.UI.Image>();
             //右か左、どちらかカーソルが押された方の画面外に新メニューを生成
             //メニューの親オブジェクト(このオブジェクト)があるので、その子になるよう調整(背景パネルの上かつ、カーソルの下でないといけない)
             //メニューはメニューで一つ親オブジェクトを作ってそれだけでまとめておくことで、カーソル等のUIの順序を乱さない
             var position = callingMenuIsNext ? new Vector2(2000f, 0f) : new Vector2(-2000f, 0f);
-            var newMenuImage = Instantiate(currentMenuImage.gameObject, position, Quaternion.identity, transform).GetComponent<UnityEngine.UI.Image>();
+            var newMenuImage = Instantiate(currentMenuObject, position, Quaternion.identity, transform).GetComponent<UnityEngine.UI.Image>();
 
             var currentMenuRectTransform = currentMenuImage.transform as RectTransform;
             var newMenuRectTransform = newMenuImage.transform as RectTransform;
