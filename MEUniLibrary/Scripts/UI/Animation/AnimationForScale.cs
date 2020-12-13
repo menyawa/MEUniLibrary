@@ -9,8 +9,6 @@ namespace MEUniLibrary.UI.Animation {
     /// </summary>
     public class AnimationForScale : PluralObjectAnimationBase {
         [SerializeField] private List<Transform> transformList_;
-        //開始をこの時間分遅延させる
-        [SerializeField] private float firstDelay_;
         //拡大方向
         private enum AXIS {
             X, 

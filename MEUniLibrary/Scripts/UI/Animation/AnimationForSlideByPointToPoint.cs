@@ -15,8 +15,6 @@ namespace MEUniLibrary.UI.Animation {
         [SerializeField] private Vector3 movementVec_;
         //移動の際の距離
         [SerializeField] private float length_;
-        //開始をこの時間分遅延させる
-        [SerializeField] private float firstDelay_;
         //最初に位置を初期化した後、オブジェクトを動かす必要があるかどうか
         [SerializeField] private bool needDisplayInAwake_;
 

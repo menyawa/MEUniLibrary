@@ -10,8 +10,6 @@ namespace MEUniLibrary.UI.Animation {
         [SerializeField] private UnityEngine.UI.Graphic[] graphics_;
         //透明度の終了値
         [SerializeField] private float endValue_;
-        //開始をこの時間分遅延させる
-        [SerializeField] private float firstDelay_;
         //開始と同時にアニメーションが必要かどうか
         [SerializeField] private bool needFadeInStart_;
         //アニメーション前後でアクティブ・非アクティブを切換える必要があるか
