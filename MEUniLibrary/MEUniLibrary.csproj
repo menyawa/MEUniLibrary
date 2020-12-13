@@ -1292,9 +1292,9 @@
     <Compile Include="Scripts\UI\Button\CategoryButton.cs" />
     <Compile Include="Scripts\UI\Button\ExitGameButton.cs" />
     <Compile Include="Scripts\UI\Button\FastForwardButton.cs" />
-    <Compile Include="Scripts\UI\Button\LoadInputSceneButton.cs" />
+    <Compile Include="Scripts\UI\Button\LoadingInputSceneButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchInteractableForUIGroupButton.cs" />
-    <Compile Include="Scripts\UI\Button\LoadSceneButton.cs" />
+    <Compile Include="Scripts\UI\Button\LoadingSceneButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchImageByButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchObjectsActiveButton.cs" />
     <Compile Include="Scripts\UI\Button\CursorButton.cs" />
