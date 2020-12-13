@@ -9,16 +9,17 @@ namespace MEUniLibrary.UI.Animation {
     /// </summary>
     public class AnimationForScale : PluralObjectAnimationBase {
         [SerializeField] private List<Transform> transformList_;
+
         //拡大方向
         private enum AXIS {
-            X, 
-            Y, 
-            Z, 
+            X,
+            Y,
+            Z,
             ALL
         }
         [SerializeField] private AXIS axis_;
 
-        private List<Vector3> initialScaleList_; 
+        private List<Vector3> initialScaleList_;
 
         private void Start() {
             //最初のスケールを取っておく(リセット時のため)
@@ -78,6 +79,13 @@ namespace MEUniLibrary.UI.Animation {
             initSequence();
             sequence_.AppendInterval(firstDelay_);
 
+            //逆順設定なら、順番を反転させる
+            var transformList = transformList_;
+            if (orderType_ == ORDER_TYPE.REVERSE_ORDER) {
+                transformList.Reverse();
+                endScaleList.Reverse();
+            }
+
             //指定された個数、指定された追加法(終わった後か、前のアニメーションと同時か)でスケールを弄るアニメーションを追加する
             //当初は指定された軸の分岐を加えるとネストが深くなる(あとめんどくさい)ため行なわず、指定軸以外のスケールを1にして対応しようとした
             //だがそれだと縮小で元に戻す際に軸が指定できず、元のスケールに戻せなかった
@@ -87,32 +95,32 @@ namespace MEUniLibrary.UI.Animation {
                     case TYPE.IN_ORDER:
                         switch (axis_) {
                             case AXIS.X:
-                                sequence_.Append(transformList_[index].DOScaleX(endScaleList[index].x, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Append(transformList[index].DOScaleX(endScaleList[index].x, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.Y:
-                                sequence_.Append(transformList_[index].DOScaleY(endScaleList[index].y, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Append(transformList[index].DOScaleY(endScaleList[index].y, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.Z:
-                                sequence_.Append(transformList_[index].DOScaleZ(endScaleList[index].z, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Append(transformList[index].DOScaleZ(endScaleList[index].z, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.ALL:
-                                sequence_.Append(transformList_[index].DOScale(endScaleList[index], duration_).SetEase(Ease.InOutBack));
+                                sequence_.Append(transformList[index].DOScale(endScaleList[index], duration_).SetEase(Ease.InOutBack));
                                 break;
                         }
                         break;
                     case TYPE.SAME_TIME:
                         switch (axis_) {
                             case AXIS.X:
-                                sequence_.Join(transformList_[index].DOScaleX(endScaleList[index].x, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Join(transformList[index].DOScaleX(endScaleList[index].x, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.Y:
-                                sequence_.Join(transformList_[index].DOScaleY(endScaleList[index].y, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Join(transformList[index].DOScaleY(endScaleList[index].y, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.Z:
-                                sequence_.Join(transformList_[index].DOScaleZ(endScaleList[index].z, duration_).SetEase(Ease.InOutBack));
+                                sequence_.Join(transformList[index].DOScaleZ(endScaleList[index].z, duration_).SetEase(Ease.InOutBack));
                                 break;
                             case AXIS.ALL:
-                                sequence_.Join(transformList_[index].DOScale(endScaleList[index], duration_).SetEase(Ease.InOutBack));
+                                sequence_.Join(transformList[index].DOScale(endScaleList[index], duration_).SetEase(Ease.InOutBack));
                                 break;
                         }
                         break;
