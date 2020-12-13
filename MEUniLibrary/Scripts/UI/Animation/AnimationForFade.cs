@@ -61,10 +61,10 @@ namespace MEUniLibrary.UI.Animation {
             foreach (var graphic in graphics) {
                 switch (type_) {
                     case TYPE.IN_ORDER:
-                        sequence_.Append(graphic.DOFade(endValue_, duration_));
+                        sequence_.Append(graphic.DOFade(endValue, duration_));
                         break;
                     case TYPE.SAME_TIME:
-                        sequence_.Join(graphic.DOFade(endValue_, duration_));
+                        sequence_.Join(graphic.DOFade(endValue, duration_));
                         break;
                 }
             }
