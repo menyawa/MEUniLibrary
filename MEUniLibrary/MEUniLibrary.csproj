@@ -109,6 +109,7 @@
     <Compile Include="Scripts\UI\Animation\PointerSelect.cs" />
     <Compile Include="Scripts\UI\Animation\MenuByPopUp.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForSlideByPointToPoint.cs" />
+    <Compile Include="Scripts\UI\Button\AnimationForFadeButton.cs" />
     <Compile Include="Scripts\UI\Button\AnimationForScaleButtton.cs" />
     <Compile Include="Scripts\UI\Button\AnimationForSlideByPointToPointButton.cs" />
     <Compile Include="Scripts\UI\Button\Base\SwitchOpeningAndClosingOfUIButtonBase.cs" />
