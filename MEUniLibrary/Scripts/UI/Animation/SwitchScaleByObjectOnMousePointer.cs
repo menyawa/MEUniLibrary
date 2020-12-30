@@ -5,7 +5,7 @@ namespace MEUniLibrary.UI.Animation {
     /// <summary>
     /// マウスポインタを置いたオブジェクトを一定値大きくし、外したら元に戻すクラス
     /// </summary>
-    public class SwitchScaleByObjectWithMousePointer : AnimationForScale, IPointerEnterHandler, IPointerExitHandler {
+    public class SwitchScaleByObjectOnMousePointer : AnimationForScale, IPointerEnterHandler, IPointerExitHandler {
         //ポインターが乗っている際のスケール
         //マイナスの値を入れれば、小さくすることも可能
         [SerializeField] private Vector3 scaleWithPointer_;

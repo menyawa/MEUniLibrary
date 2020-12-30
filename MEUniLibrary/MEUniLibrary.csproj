@@ -105,7 +105,7 @@
     <Compile Include="Scripts\UI\Animation\Base\PluralObjectAnimationBase.cs" />
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />
     <Compile Include="Scripts\UI\Animation\BackgroundPanelByMenu.cs" />
-    <Compile Include="Scripts\UI\Animation\SwitchScaleByObjectWithMousePointer.cs" />
+    <Compile Include="Scripts\UI\Animation\SwitchScaleByObjectOnMousePointer.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForFade.cs" />
     <Compile Include="Scripts\UI\Animation\PointerSelect.cs" />
     <Compile Include="Scripts\UI\Animation\MenuByPopUp.cs" />
