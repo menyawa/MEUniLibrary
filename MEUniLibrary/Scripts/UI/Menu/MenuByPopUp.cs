@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using MEUniLibrary.UI.Animation;
 
-namespace MEUniLibrary.UI.Animation {
+namespace MEUniLibrary.UI.Menu {
     /// <summary>
     /// ポップアップで出てくるメニューのクラス
     /// </summary>

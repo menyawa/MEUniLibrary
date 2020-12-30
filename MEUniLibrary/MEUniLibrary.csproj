@@ -105,10 +105,12 @@
     <Compile Include="Scripts\UI\Animation\Base\PluralObjectAnimationBase.cs" />
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />
     <Compile Include="Scripts\UI\Animation\BackgroundPanelByMenu.cs" />
+    <Compile Include="Scripts\UI\Button\Menu\CursorButtonByDoublyLinkedMenu.cs" />
+    <Compile Include="Scripts\UI\Menu\DoublyLinkedMenu.cs" />
     <Compile Include="Scripts\UI\Animation\SwitchScaleByObjectOnMousePointer.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForFade.cs" />
     <Compile Include="Scripts\UI\Animation\PointerSelect.cs" />
-    <Compile Include="Scripts\UI\Animation\MenuByPopUp.cs" />
+    <Compile Include="Scripts\UI\Menu\MenuByPopUp.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForSlideByPointToPoint.cs" />
     <Compile Include="Scripts\UI\Button\AnimationForFadeButton.cs" />
     <Compile Include="Scripts\UI\Button\AnimationForScaleButtton.cs" />
@@ -1298,7 +1300,7 @@
     <Compile Include="Scripts\UI\Button\LoadingSceneButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchImageByButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchObjectsActiveButton.cs" />
-    <Compile Include="Scripts\UI\Button\CursorButtonForMenuByPopUp.cs" />
+    <Compile Include="Scripts\UI\Button\Menu\CursorButtonForMenuByPopUp.cs" />
     <Compile Include="Scripts\ScreenShot\CaptureScreenShot.cs" />
     <Compile Include="Scripts\UI\Image\DrawImageFile.cs" />
     <Compile Include="Scripts\UI\InputField\InputNumberFieldManager.cs" />

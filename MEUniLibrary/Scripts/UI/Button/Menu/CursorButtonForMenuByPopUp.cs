@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using MEUniLibrary.UI.Animation;
+using MEUniLibrary.UI.Menu;
 
 namespace MEUniLibrary.UI.Button {
     /// <summary>
@@ -13,8 +14,8 @@ namespace MEUniLibrary.UI.Button {
         [SerializeField] private CursorButtonForMenuByPopUp oppositeCursorButtonForMenuByPopUp_;
         //前後のメニューどちらを呼ぶのかのタイプ
         private enum CALLING_MENU_TYPE {
-            NEXT,
-            PREV
+            PREV,
+            NEXT
         }
         [SerializeField] private CALLING_MENU_TYPE callingMenuType_;
 
@@ -34,7 +35,7 @@ namespace MEUniLibrary.UI.Button {
         /// <summary>
         /// メニューの端にいるかいないかに合わせこのボタンの最大化・最小化をする
         /// </summary>
-        public void switchScaleByButtonInMenuEdge() {
+        private void switchScaleByButtonInMenuEdge() {
             //ループ可能なメニューなら端というものが存在しないので無条件で返す
             if (menuByPopUp_.canLoop()) return;
 
