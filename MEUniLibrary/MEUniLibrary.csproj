@@ -1298,7 +1298,7 @@
     <Compile Include="Scripts\UI\Button\LoadingSceneButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchImageByButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchObjectsActiveButton.cs" />
-    <Compile Include="Scripts\UI\Button\CursorButton.cs" />
+    <Compile Include="Scripts\UI\Button\CursorButtonForMenuByPopUp.cs" />
     <Compile Include="Scripts\ScreenShot\CaptureScreenShot.cs" />
     <Compile Include="Scripts\UI\Image\DrawImageFile.cs" />
     <Compile Include="Scripts\UI\InputField\InputNumberFieldManager.cs" />
