@@ -17,11 +17,11 @@ namespace MEUniLibrary.UI.Animation {
             nomalScale_ = transform.localScale;
         }
 
-        public void OnPointerEnter(PointerEventData eventData) {
+        public virtual void OnPointerEnter(PointerEventData eventData) {
             expand(scaleWithPointer_);
         }
 
-        public void OnPointerExit(PointerEventData eventData) {
+        public virtual void OnPointerExit(PointerEventData eventData) {
             expand(nomalScale_);
         }
     }
