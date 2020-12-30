@@ -100,6 +100,7 @@
     <Compile Include="..\..\Plugins_for_Library\Easy Save 3\Editor\TypesWindow.cs">
       <Link>Scripts\Plugins\TypesWindow.cs</Link>
     </Compile>
+    <Compile Include="Scripts\Audio\AudioController.cs" />
     <Compile Include="Scripts\Moving\MoveObjectInFrontOfTargetObject.cs" />
     <Compile Include="Scripts\UI\Animation\Base\PluralObjectAnimationBase.cs" />
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />
@@ -1303,7 +1304,6 @@
     <Compile Include="Scripts\UI\InputField\InputNumberFieldManager.cs" />
     <Compile Include="Scripts\UI\InputField\InputStringFieldManager.cs" />
     <Compile Include="Scripts\UI\Log.cs" />
-    <Compile Include="Scripts\Audio\PlaySound.cs" />
     <Compile Include="Scripts\UI\Animation\AnimationForPopUp.cs" />
     <Compile Include="Scripts\UI\Button\PopUpUIButton.cs" />
     <Compile Include="Scripts\Collisions\ResizeBoxCollider2DToObjectSize.cs" />

@@ -16,13 +16,22 @@ namespace MEUniLibrary.UI.Animation {
         //アニメーション前後でアクティブ・非アクティブを切換える必要があるか
         [SerializeField] private bool needSwitchingActive_;
 
+        //どんなときにスキップするかのタイプ
+        private enum SKIP_TYPE {
+            NONE,
+            LEFT_CLICK,
+            RIGHT_CLICK,
+            MIDDLE_CLICK
+        }
+        [SerializeField] private SKIP_TYPE skipType_;
+
         private void Start() {
             if (needFadeInStart_) fade();
         }
 
         private void Update() {
             //左クリックでアニメーションをスキップする
-            if (Input.GetMouseButtonDown(0)) {
+            if (skipSequenceCommandIsEntered()) {
                 completeSequence();
             }
         }
@@ -90,6 +99,25 @@ namespace MEUniLibrary.UI.Animation {
         /// <param name="delay"></param>
         public void setFirstDelay(float delay) {
             firstDelay_ = delay;
+        }
+
+        /// <summary>
+        /// シーケンスをスキップするボタンが入力されているかどうか
+        /// </summary>
+        /// <returns></returns>
+        private bool skipSequenceCommandIsEntered() {
+            switch (skipType_) {
+                case SKIP_TYPE.NONE:
+                    return false;
+                case SKIP_TYPE.LEFT_CLICK:
+                    return Input.GetMouseButton(0);
+                case SKIP_TYPE.RIGHT_CLICK:
+                    return Input.GetMouseButton(1);
+                case SKIP_TYPE.MIDDLE_CLICK:
+                    return Input.GetMouseButton(2);
+                default:
+                    return false;
+            }
         }
     }
 }

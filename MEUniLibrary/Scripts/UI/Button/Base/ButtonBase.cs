@@ -18,7 +18,7 @@ namespace MEUniLibrary.UI.Button {
         /// </summary>
         private void playSound() {
             if (se_ != null)
-                PlaySound.Instance.playSoundOnce(se_);
+                GameObject.Find(AudioController.objectName_).GetComponent<AudioController>().playSoundOnce(se_);
         }
     }
 }
