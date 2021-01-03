@@ -134,8 +134,11 @@ namespace MEUniLibrary.UI.Animation {
         /// </summary>
         public void minimize() {
             //0に拡大するとすれば、すなわち最小化となる
+            //ただ完全な0にしてしまうとUnityのバグでスクロールバーが一番下になったり、画像がモザイクがかったようになったりする
+            //そのため物理的には見えないサイズ(0.001f)とする
             //指定した軸で拡大は行われるので、関係ない軸のスケールが最小化されてしまったり、それにより次回以降の拡大動作がおかしくなることはない
-            expand(0.0f);
+            const float MINIMIZE_SIZE = 0.001f;
+            expand(MINIMIZE_SIZE);
         }
 
         /// <summary>
