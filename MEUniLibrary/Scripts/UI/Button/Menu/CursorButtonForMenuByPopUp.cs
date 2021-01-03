@@ -35,7 +35,7 @@ namespace MEUniLibrary.UI.Button {
         /// <summary>
         /// 全てのカーソルボタンの大きさを切り替える
         /// </summary>
-        private void switchScaleAllCursor() {
+        public void switchScaleAllCursor() {
             //このメソッドはボタンを押した際に呼ばれるため、もう一方のボタンでは呼ばれない
             //なのでボタンが押された際、反対側のボタンの方も呼び出してスケーリングする
             //変更メソッド内で呼び出してしまうと、無限ループが発生するので注意
