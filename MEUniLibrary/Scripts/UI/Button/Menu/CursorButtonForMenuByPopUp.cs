@@ -22,7 +22,7 @@ namespace MEUniLibrary.UI.Button {
         new private void Start() {
             base.Start();
             button_.onClick.AddListener(slide);
-            button_.onClick.AddListener(switchScaleByButtonInMenuEdge);
+            button_.onClick.AddListener(switchScaleAllCursor);
         }
 
         /// <summary>
@@ -33,6 +33,17 @@ namespace MEUniLibrary.UI.Button {
         }
 
         /// <summary>
+        /// 全てのカーソルボタンの大きさを切り替える
+        /// </summary>
+        private void switchScaleAllCursor() {
+            //このメソッドはボタンを押した際に呼ばれるため、もう一方のボタンでは呼ばれない
+            //なのでボタンが押された際、反対側のボタンの方も呼び出してスケーリングする
+            //変更メソッド内で呼び出してしまうと、無限ループが発生するので注意
+            this.switchScaleByButtonInMenuEdge();
+            oppositeCursorButtonForMenuByPopUp_.switchScaleByButtonInMenuEdge();
+        }
+
+        /// <summary>
         /// メニューの端にいるかいないかに合わせこのボタンの最大化・最小化をする
         /// </summary>
         private void switchScaleByButtonInMenuEdge() {
@@ -40,19 +51,15 @@ namespace MEUniLibrary.UI.Button {
             if (menuByPopUp_.canLoop()) return;
 
             //参照している方のメニューが存在しているならボタンを最大化(出し)、無いなら(端なら)最小化する
-            //またこのメソッドはボタンを押した際に呼ばれるため、もう一方のボタンでは呼ばれない
-            //なので反対側のボタンの方も呼び出してスケーリングする
             //最小化する途中で連打されても、メニューの方で端で止まるのでそれを考慮する必要はない
             switch (callingMenuType_) {
                 case CALLING_MENU_TYPE.NEXT:
                     if (menuByPopUp_.hasNext()) animationForButtonScale_.expand();
                     else animationForButtonScale_.minimize();
-                    oppositeCursorButtonForMenuByPopUp_.switchScaleByButtonInMenuEdge();
                     break;
                 case CALLING_MENU_TYPE.PREV:
                     if (menuByPopUp_.hasPrev()) animationForButtonScale_.expand();
                     else animationForButtonScale_.minimize();
-                    oppositeCursorButtonForMenuByPopUp_.switchScaleByButtonInMenuEdge();
                     break;
             }
         }
