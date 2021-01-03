@@ -1302,7 +1302,7 @@
     <Compile Include="Scripts\UI\Button\SwitchImageByButton.cs" />
     <Compile Include="Scripts\UI\Button\SwitchObjectsActiveButton.cs" />
     <Compile Include="Scripts\UI\Button\Menu\CursorButtonForMenuByPopUp.cs" />
-    <Compile Include="Scripts\UI\Image\DrawImageFile.cs" />
+    <Compile Include="Scripts\UI\Image\ImagePanel.cs" />
     <Compile Include="Scripts\UI\InputField\InputNumberFieldManager.cs" />
     <Compile Include="Scripts\UI\InputField\InputStringFieldManager.cs" />
     <Compile Include="Scripts\UI\Log.cs" />
