@@ -1,9 +1,7 @@
 ﻿using System.IO;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using MEUniLibrary.UI.Image;
 
-namespace MEUniLibrary.ScreenShot {
+namespace MEUniLibrary.UI.Image {
     /// <summary>
     /// スクリーンショットのクラス
     /// 描画や画像のズームも実現するため、ImagePanelを継承

@@ -102,7 +102,7 @@
     </Compile>
     <Compile Include="Scripts\Audio\AudioController.cs" />
     <Compile Include="Scripts\Moving\MoveObjectInFrontOfTargetObject.cs" />
-    <Compile Include="Scripts\ScreenShot\ScreenShot.cs" />
+    <Compile Include="Scripts\UI\Image\ScreenShot.cs" />
     <Compile Include="Scripts\UI\Animation\Base\PluralObjectAnimationBase.cs" />
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />
     <Compile Include="Scripts\UI\Animation\BackgroundPanelByMenu.cs" />
@@ -1315,6 +1315,8 @@
     <Compile Include="Scripts\UI\Ranking\RankingText.cs" />
     <Compile Include="Scripts\UI\SingleTimer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\ScreenShot\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

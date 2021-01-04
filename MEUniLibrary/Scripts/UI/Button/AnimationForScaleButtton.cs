@@ -20,7 +20,7 @@ namespace MEUniLibrary.UI.Button {
                     animationForScale_.expand();
                     break;
                 case TYPE.CLOSE:
-                    animationForScale_.expand(0.0f);
+                    animationForScale_.minimize();
                     break;
             }
         }
