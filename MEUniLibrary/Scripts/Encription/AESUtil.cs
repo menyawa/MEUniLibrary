@@ -67,7 +67,7 @@ namespace MEUniLibrary.Encription {
             aes.KeySize = 128;
             //ブロック長は128が最大のため、256とかにするとエラーが出るので注意
             aes.BlockSize = 128;
-            const string KEY = "tjT-_^A)@96KU:!r@=..N8#GgG*CDQnb";
+            const string KEY = "xwsRfECJ_yohfUow?QE@3h,fb.NcYtok";
             //暗号化の際に新たに初期化ベクトルを生成する
             if (isEncryption) aes.GenerateIV();
             else {
