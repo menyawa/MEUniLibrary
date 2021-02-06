@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="Scripts\Audio\AudioController.cs" />
     <Compile Include="Scripts\Moving\MoveObjectInFrontOfTargetObject.cs" />
+    <Compile Include="Scripts\UI\Button\Menu\SwitchMenuButton.cs" />
     <Compile Include="Scripts\UI\Image\ScreenShot.cs" />
     <Compile Include="Scripts\UI\Animation\Base\PluralObjectAnimationBase.cs" />
     <Compile Include="Scripts\UI\Animation\BoundSelectingUI.cs" />

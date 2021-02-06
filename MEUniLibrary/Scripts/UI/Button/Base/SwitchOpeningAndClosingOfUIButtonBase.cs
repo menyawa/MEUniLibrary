@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace MEUniLibrary.UI.Button {
     /// <summary>

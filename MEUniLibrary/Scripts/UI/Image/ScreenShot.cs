@@ -13,13 +13,12 @@ namespace MEUniLibrary.UI.Image {
         /// <returns></returns>
         public string capture(string imageTitle) {
             var timeStamp = System.DateTime.Now.ToString("yyyyMMddHHmmss");
-            var directoryPath = Application.dataPath + "/ScreenShots/";
-            var title = imageTitle + "_" + timeStamp + ".png";
-            var filePath = directoryPath + title;
+            var directoryPath = $"{Application.dataPath}/ScreenShots";
+            //被らないよう、タイムスタンプを付与
+            var title = $"{imageTitle}_{timeStamp}.png";
+            var filePath = $"{directoryPath}/{title}";
             //ディレクトリが無かったら作成しておく
-            if (Directory.Exists(directoryPath) == false) {
-                Directory.CreateDirectory(directoryPath);
-            }
+            if (Directory.Exists(directoryPath) == false) Directory.CreateDirectory(directoryPath);
             ScreenCapture.CaptureScreenshot(filePath);
 
             Debug.Log("Capture ScreenShot!");
