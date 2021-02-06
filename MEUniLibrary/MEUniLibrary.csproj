@@ -101,6 +101,7 @@
       <Link>Scripts\Plugins\TypesWindow.cs</Link>
     </Compile>
     <Compile Include="Scripts\Audio\AudioController.cs" />
+    <Compile Include="Scripts\Encription\AESUtil.cs" />
     <Compile Include="Scripts\Moving\MoveObjectInFrontOfTargetObject.cs" />
     <Compile Include="Scripts\UI\Button\Menu\SwitchMenuButton.cs" />
     <Compile Include="Scripts\UI\Image\ScreenShot.cs" />
