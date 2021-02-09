@@ -32,12 +32,18 @@ namespace MEUniLibrary.Audio {
         /// <param name="nextBGM"></param>
         /// <param name="delay"></param>
         public void playBGM(AudioClip nextBGM, float delay = 0.0f) {
+            Debug.Log("BGMを切り替え再生します");
+
             const float DURATION = 0.3f;
             var audioSource = GetComponent<AudioSource>();
             var sequence = DOTween.Sequence();
             sequence.AppendInterval(delay);
             sequence.Append(audioSource.DOFade(0f, DURATION));
-            sequence.AppendCallback(() => audioSource.clip = nextBGM);
+            sequence.AppendCallback(() => {
+                audioSource.clip = nextBGM;
+                //オーディオファイルを切り替える際、再度再生しないとBGMが止まるので注意
+                audioSource.Play();
+            });
             sequence.Append(audioSource.DOFade(1.0f, DURATION));
             sequence.Play();
         }
